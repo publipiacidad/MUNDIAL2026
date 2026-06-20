@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="viewport" content="width=1080, height=1920">
 
 <title>MUNDIAL 2026</title>
 
 <style>
 
-body{
-
+*{
 margin:0;
 padding:0;
+box-sizing:border-box;
+}
 
-background:#000;
-
-font-family:Arial,sans-serif;
-
-color:white;
+body{
 
 width:1080px;
 height:1920px;
 
+background:#000;
+
+font-family:Arial,Helvetica,sans-serif;
+
+color:white;
+
 overflow:hidden;
+
+}
+
+.container{
+
+padding:40px;
+
+height:100%;
+
+display:flex;
+
+flex-direction:column;
 
 }
 
@@ -31,7 +48,7 @@ header{
 
 text-align:center;
 
-padding-top:50px;
+margin-bottom:40px;
 
 }
 
@@ -39,26 +56,33 @@ h1{
 
 font-size:90px;
 
-margin:0;
-
 color:#FFD700;
+
+letter-spacing:3px;
 
 }
 
-.fecha{
+#fecha{
 
-font-size:40px;
+font-size:42px;
 
 margin-top:20px;
 
+color:#ddd;
+
 }
 
-section{
+.panel{
 
-margin-top:60px;
+background:#111;
 
-padding-left:50px;
-padding-right:50px;
+border:3px solid #222;
+
+border-radius:30px;
+
+padding:30px;
+
+margin-bottom:35px;
 
 }
 
@@ -68,7 +92,9 @@ font-size:55px;
 
 color:#00FFFF;
 
-margin-bottom:30px;
+margin-bottom:25px;
+
+text-align:center;
 
 }
 
@@ -78,9 +104,51 @@ display:flex;
 
 justify-content:space-between;
 
-font-size:48px;
+align-items:center;
 
-padding:25px 0;
+font-size:45px;
+
+padding:22px 0;
+
+border-bottom:1px solid #333;
+
+}
+
+.partido:last-child{
+
+border:none;
+
+}
+
+.equipo{
+
+width:350px;
+
+}
+
+.resultado{
+
+font-size:55px;
+
+font-weight:bold;
+
+color:#FFD700;
+
+}
+
+.tabla{
+
+font-size:40px;
+
+}
+
+.fila{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:18px 0;
 
 border-bottom:1px solid #333;
 
@@ -88,17 +156,41 @@ border-bottom:1px solid #333;
 
 footer{
 
-position:absolute;
-
-bottom:50px;
-
-width:100%;
-
 text-align:center;
+
+margin-top:auto;
 
 font-size:35px;
 
-color:#888;
+color:#777;
+
+}
+
+.scroll{
+
+animation:subir 20s linear infinite;
+
+}
+
+@keyframes subir{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
 
 }
 
@@ -108,15 +200,17 @@ color:#888;
 
 <body>
 
+<div class="container">
+
 <header>
 
 <h1>⚽ MUNDIAL 2026</h1>
 
-<div class="fecha" id="fecha"></div>
+<div id="fecha"></div>
 
 </header>
 
-<section>
+<div class="panel">
 
 <div class="titulo">
 
@@ -124,29 +218,43 @@ RESULTADOS EN VIVO
 
 </div>
 
+<div class="scroll">
+
 <div class="partido">
 
-<span>🇧🇷 Brasil</span>
+<div class="equipo">🇧🇷 Brasil</div>
 
-<span>3 - 0</span>
+<div class="resultado">3 - 0</div>
 
-<span>Haití 🇭🇹</span>
+<div class="equipo" style="text-align:right;">Haití 🇭🇹</div>
 
 </div>
 
 <div class="partido">
 
-<span>🏴 Escocia</span>
+<div class="equipo">🇺🇸 USA</div>
 
-<span>0 - 1</span>
+<div class="resultado">2 - 0</div>
 
-<span>Marruecos 🇲🇦</span>
+<div class="equipo" style="text-align:right;">Australia 🇦🇺</div>
 
 </div>
 
-</section>
+<div class="partido">
 
-<section>
+<div class="equipo">🏴 Escocia</div>
+
+<div class="resultado">0 - 1</div>
+
+<div class="equipo" style="text-align:right;">Marruecos 🇲🇦</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="panel">
 
 <div class="titulo">
 
@@ -156,45 +264,115 @@ PRÓXIMOS PARTIDOS
 
 <div class="partido">
 
-<span>🇳🇱 Holanda</span>
+<div class="equipo">🇳🇱 Holanda</div>
 
-<span>13:00</span>
+<div class="resultado">13:00</div>
 
-<span>Suecia 🇸🇪</span>
+<div class="equipo" style="text-align:right;">Suecia 🇸🇪</div>
 
 </div>
 
 <div class="partido">
 
-<span>🇩🇪 Alemania</span>
+<div class="equipo">🇩🇪 Alemania</div>
 
-<span>16:00</span>
+<div class="resultado">16:00</div>
 
-<span>Costa de Marfil 🇨🇮</span>
+<div class="equipo" style="text-align:right;">Costa de Marfil 🇨🇮</div>
 
 </div>
 
-</section>
+<div class="partido">
+
+<div class="equipo">🇪🇨 Ecuador</div>
+
+<div class="resultado">20:00</div>
+
+<div class="equipo" style="text-align:right;">Curazao 🇨🇼</div>
+
+</div>
+
+</div>
+
+<div class="panel">
+
+<div class="titulo">
+
+TABLA GRUPO A
+
+</div>
+
+<div class="tabla">
+
+<div class="fila">
+
+<span>1. 🇲🇽 México</span>
+
+<span>6 pts</span>
+
+</div>
+
+<div class="fila">
+
+<span>2. 🇰🇷 Corea del Sur</span>
+
+<span>3 pts</span>
+
+</div>
+
+<div class="fila">
+
+<span>3. 🇨🇿 Chequia</span>
+
+<span>1 pt</span>
+
+</div>
+
+<div class="fila">
+
+<span>4. 🇿🇦 Sudáfrica</span>
+
+<span>1 pt</span>
+
+</div>
+
+</div>
+
+</div>
 
 <footer>
 
-Actualización automática
+Actualización automática • Mundial FIFA 2026
 
 </footer>
+
+</div>
 
 <script>
 
 function actualizarFecha(){
 
-const ahora=new Date();
+const ahora = new Date();
 
-document.getElementById("fecha").innerHTML=
+const opciones = {
 
-ahora.toLocaleDateString('es-ES')+
+weekday:'long',
 
-" "+
+year:'numeric',
 
-ahora.toLocaleTimeString('es-ES');
+month:'long',
+
+day:'numeric'
+
+};
+
+const fecha = ahora.toLocaleDateString('es-ES',opciones);
+
+const hora = ahora.toLocaleTimeString('es-ES');
+
+document.getElementById("fecha").innerHTML =
+
+fecha.toUpperCase()+"<br>"+hora;
 
 }
 
