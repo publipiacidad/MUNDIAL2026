@@ -352,46 +352,40 @@ Actualización automática • Mundial FIFA 2026
 
 function actualizarFecha(){
 
-const ahora = new Date();
+// Hora UTC actual
+const ahoraUTC = new Date();
 
-const fecha = ahora.toLocaleDateString('es-EC',{
+// Convertir a UTC-5 (Guayaquil)
+const utc = ahoraUTC.getTime() + (ahoraUTC.getTimezoneOffset() * 60000);
 
-timeZone:'America/Guayaquil',
+const guayaquil = new Date(utc + (-5 * 3600000));
 
-day:'2-digit',
+// Formato DD/MM/YYYY
 
-month:'2-digit',
+const dia = String(guayaquil.getDate()).padStart(2,'0');
 
-year:'numeric'
+const mes = String(guayaquil.getMonth()+1).padStart(2,'0');
 
-});
+const anio = guayaquil.getFullYear();
 
-const hora = ahora.toLocaleTimeString('es-EC',{
+// Formato HH:MM:SS
 
-timeZone:'America/Guayaquil',
+const hora = String(guayaquil.getHours()).padStart(2,'0');
 
-hour:'2-digit',
+const minutos = String(guayaquil.getMinutes()).padStart(2,'0');
 
-minute:'2-digit',
-
-second:'2-digit',
-
-hour12:false
-
-});
+const segundos = String(guayaquil.getSeconds()).padStart(2,'0');
 
 document.getElementById("fecha").innerHTML =
 
-fecha + " " + hora;
+`${dia}/${mes}/${anio} ${hora}:${minutos}:${segundos}`;
 
 }
+
+// Actualizar cada segundo
 
 setInterval(actualizarFecha,1000);
 
 actualizarFecha();
 
 </script>
-
-</body>
-
-</html>
