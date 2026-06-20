@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>MUNDIAL 2026</title>
+
+<style>
+
+body{
+
+margin:0;
+padding:0;
+
+background:#000;
+
+font-family:Arial,sans-serif;
+
+color:white;
+
+width:1080px;
+height:1920px;
+
+overflow:hidden;
+
+}
+
+header{
+
+text-align:center;
+
+padding-top:50px;
+
+}
+
+h1{
+
+font-size:90px;
+
+margin:0;
+
+color:#FFD700;
+
+}
+
+.fecha{
+
+font-size:40px;
+
+margin-top:20px;
+
+}
+
+section{
+
+margin-top:60px;
+
+padding-left:50px;
+padding-right:50px;
+
+}
+
+.titulo{
+
+font-size:55px;
+
+color:#00FFFF;
+
+margin-bottom:30px;
+
+}
+
+.partido{
+
+display:flex;
+
+justify-content:space-between;
+
+font-size:48px;
+
+padding:25px 0;
+
+border-bottom:1px solid #333;
+
+}
+
+footer{
+
+position:absolute;
+
+bottom:50px;
+
+width:100%;
+
+text-align:center;
+
+font-size:35px;
+
+color:#888;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>⚽ MUNDIAL 2026</h1>
+
+<div class="fecha" id="fecha"></div>
+
+</header>
+
+<section>
+
+<div class="titulo">
+
+RESULTADOS EN VIVO
+
+</div>
+
+<div class="partido">
+
+<span>🇧🇷 Brasil</span>
+
+<span>3 - 0</span>
+
+<span>Haití 🇭🇹</span>
+
+</div>
+
+<div class="partido">
+
+<span>🏴 Escocia</span>
+
+<span>0 - 1</span>
+
+<span>Marruecos 🇲🇦</span>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="titulo">
+
+PRÓXIMOS PARTIDOS
+
+</div>
+
+<div class="partido">
+
+<span>🇳🇱 Holanda</span>
+
+<span>13:00</span>
+
+<span>Suecia 🇸🇪</span>
+
+</div>
+
+<div class="partido">
+
+<span>🇩🇪 Alemania</span>
+
+<span>16:00</span>
+
+<span>Costa de Marfil 🇨🇮</span>
+
+</div>
+
+</section>
+
+<footer>
+
+Actualización automática
+
+</footer>
+
+<script>
+
+function actualizarFecha(){
+
+const ahora=new Date();
+
+document.getElementById("fecha").innerHTML=
+
+ahora.toLocaleDateString('es-ES')+
+
+" "+
+
+ahora.toLocaleTimeString('es-ES');
+
+}
+
+setInterval(actualizarFecha,1000);
+
+actualizarFecha();
+
+</script>
+
+</body>
+
+</html>
